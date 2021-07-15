@@ -59,12 +59,35 @@ header
             transform: none !important
             padding: 0
             position: static
-            height: initial
-            width: unset
+            height: 100%
+            align-items: center
+            display: grid
+            grid-template-columns: auto auto
+            width: max-content
             align-items: center
         &.toggled
             transform: translateX(0)
             opacity: 1
+    &__nav
+        display: grid
+        order: 1
+        grid-gap: 16px
+        @include plus1025()
+            grid-template-columns: repeat(3, auto)
+            grid-gap: 50px
+            width: max-content
+            margin-right: 30px
+            order: 0
+            align-items: center
+        &__item
+            cursor: pointer
+            color: $black
+            @include font(14px, 17px)
+            font-family: firagosemibold
+            font-weight: 600
+            transition: color .1s ease-out
+            &:hover
+                color: $blue
     &__lang
         display: grid
         width: max-content
@@ -74,7 +97,10 @@ header
         @include font(14px, 17px)
         text-transform: uppercase
         grid-template-columns: auto auto
+        will-change: all
+        margin-bottom: 50px
         @include plus1025()
+            margin-bottom: 0
             grid-template-columns: unset
             grid-gap: 0
             transition: .3s ease-out
@@ -86,9 +112,12 @@ header
         a
             --height: 17px
             overflow: hidden
+            will-change: all
+            opacity: .3
             @include plus1025()
                 opacity: 0
                 height: 0
+                opacity: 1
                 transition: .3s ease-out
         &:hover
             @include plus1025()

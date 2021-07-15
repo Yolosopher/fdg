@@ -72,3 +72,14 @@ const scrolltotop = document.querySelector('.scrolltotop')
 scrolltotop.addEventListener('click', () => {
     window.scrollTo(0, 0)
 })
+
+const navItems = document.querySelectorAll('.header__nav__item')
+
+navItems.forEach(navitem => {
+    navitem.addEventListener('click', () => {
+        let id = navitem.dataset.href
+        let elementScrollHeight = document.getElementById(`${id}`).offsetTop
+        window.scrollTo(0, elementScrollHeight - 20)
+        if (window.innerWidth < 1025) hamburger.click()
+    })
+})

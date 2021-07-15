@@ -5,6 +5,9 @@
 	right: 25px;
 	z-index: 6;
 	cursor: pointer;
+	&.open {
+		position: fixed;
+	}
 }
 
 .hamburger:before,
