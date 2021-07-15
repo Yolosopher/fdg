@@ -1,0 +1,232 @@
+.section__title
+    font-family: firagosemibold
+    @include font(18px, 22px)
+    color: $black
+    font-weight: 600
+    @include plus1025()
+        @include font(32px, 38px)
+
+.main
+    &__herocontent
+        display: flex
+        width: 100%
+        margin-bottom: 50px
+        @include plus1025()
+            margin-bottom: 90px
+        .sliderpag
+            display: none
+            position: absolute
+            right: 70px
+            top: 60px
+            z-index: 3
+            grid-template-columns: auto auto
+            width: max-content
+            align-items: center
+            grid-gap: 15px
+            @include plus1025()
+                display: grid
+            &__left, &__right
+                display: flex
+                cursor: pointer
+                justify-content: center
+                align-items: center
+                border-radius: 50%
+                width: 34px
+                height: 34px
+                background-color: #fff
+                svg
+                    transition: opacity .3s ease-out
+                    will-change: opacity
+                &.disabled
+                    svg
+                        opacity: .3
+            &__right
+                svg
+                    transform: rotate(-180deg)
+            
+        &__swiper
+            width: 100%
+            display: flex
+            height: 160px
+            overflow: hidden
+            @include plus700()
+                height: 300px
+            @include plus1025()
+                height: calc(100vh - 210px)
+        &__wrapper
+            height: 100%
+            transition-delay: 0s
+            will-change: transform
+        &__slide
+            &__imgbox
+                height: 100%
+                position: relative
+                overflow: hidden
+                border-radius: 10px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                &::after
+                    content: ''
+                    display: flex
+                    width: 100%
+                    position: absolute
+                    top: 0
+                    right: 0
+                    height: 100%
+                    background: linear-gradient(rgba(23, 23, 23, 0) 0%, rgba(23, 23, 23, 0.8) 100%)
+                    z-index: 1
+                
+            &__title
+                position: absolute
+                z-index: 2
+                bottom: 20px
+                left: 20px
+                max-width: calc(100% - 40px)
+                font-family: firagosemibold
+                @include font(14px, 17px)
+                font-weight: 600
+                color: #fff
+                @include plus1025()
+                    @include font(32px, 38px)
+                    bottom: 70px
+                    left: 0
+                    padding-left: 70px
+                    max-width: 50%
+
+    &__products
+        margin-bottom: 50px
+        @include plus1025()
+            margin-bottom: 90px
+        &__header
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin-bottom: 30px
+            @include plus1025()
+                margin-bottom: 40px
+        &__swiper
+
+        &__wrapper
+
+        &__slide
+            color: $black
+            @media screen and ( max-width: 699px )
+                width: 75%
+            &__imgbox
+                width: 100%
+                height: 205px
+                overflow: hidden
+                border-radius: 10px
+                margin-bottom: 16px
+                img
+                    height: 100%
+                    width: 100%
+                    object-fit: cover
+            &__title
+                font-family: firagomedium
+                @include font(15px, 18px)
+                min-height: 36px
+                max-height: 36px
+                overflow: hidden
+                @include maxcolumn(2)
+                font-weight: 500
+                margin-bottom: 26px
+            &__price
+                font-family: firagoextrabold
+                @include font(18px, 22px)
+                color: #000
+                margin-bottom: 6px
+                font-weight: 900
+                @include plus1025()
+                    margin-bottom: 16px
+                span
+            &__paragraph
+                font-family: firagobook
+                @include font(13px, 18px)
+                color: $grey
+                
+        &__pagination
+            height: 10px
+            width: max-content
+            @include plus1025()
+                height: 14px
+
+            &__bullet
+                width: 10px
+                height: 100%
+                display: inline-block
+                background-color: #E5E5E5
+                border-radius: 4px
+                transition: .2s ease-out
+                @include plus1025()
+                    width: 14px
+                &:not(:last-child)
+                    margin-right: 6px
+                &__active
+                    background-color: $blue
+
+    &__about
+        margin-bottom: 50px
+        @include plus1025()
+            margin-bottom: 134px
+        .section__title
+            margin-bottom: 23px
+            @include plus1025()
+                margin-bottom: 83px
+
+        &__content
+            @include plus1025()
+                position: relative
+                display: grid
+                grid-template-columns: 1fr 1fr
+                grid-gap: 14px
+                margin-bottom: 40px
+        &__cover
+            display: flex
+            width: 100%
+            overflow: hidden
+            border-radius: 10px
+            height: 160px
+            margin-bottom: 30px
+            @include plus700()
+                height: 300px
+            @include plus1025()
+                margin-bottom: 0
+                height: 400px
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+        &__textbox
+            margin-bottom: 20px
+            @include plus1025()
+                width: calc((100% - 14px) / 2 + 75px)
+                margin-bottom: 0
+                max-height: 500px
+                position: absolute
+                right: 0
+                top: 90px
+                border-radius: 10px
+                background-color: #fff
+                padding: 90px
+            p
+                font-family: firagobook
+                color: $black
+                @include font(15px, 22px)
+        &__contact
+            display: grid
+            grid-gap: 20px
+            width: max-content
+            &__item
+                display: flex
+                align-items: center
+                svg
+                    margin-right: 20px
+                a, address
+                    font-family: firagosemibold
+                    @include font(14px, 17px)
+                    color: $grey                    
+                    font-style: normal
+                    text-decoration: none

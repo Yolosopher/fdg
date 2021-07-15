@@ -1,0 +1,70 @@
+footer
+    position: relative
+    height: 90px
+    background-color: #fff
+    
+    @include plus1025()
+        height: 110px
+.footer
+    width: 100%
+    padding: 0 25px
+    height: 100%
+    @media screen and ( max-width: 699px )
+        .header__logo
+            display: none !important
+    &__content
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 100%
+        @include plus1025()
+            &__realcontent
+                display: flex
+                align-items: center
+                justify-content: center
+                @include plus1025()
+                    flex-grow: 1
+                    justify-content: space-between
+    &__createdby
+        font-weight: 600
+        font-family: firagosemibold
+        color: $black
+        @include font(12px, 14px)
+        @include plus1025()
+            margin-left: calc(402px - ((100vw - 100%) / 2) + 60px)
+            @include font(14px, 17px)
+            
+        a
+            color: $blue
+.scrolltotop
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 22px
+    min-width: 44px
+    height: 44px
+    background-color: #fff
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05)
+    position: absolute
+    bottom: 100%
+    left: 50%
+    transform: translate(-50%, 50%)
+    z-index: 1
+    @include plus1025()
+        transform: none
+        position: static
+        border-radius: 0
+        width: max-content
+        box-shadow: none
+        width: unset
+        height: unset
+    span
+        font-family: firagosemibold
+        @include font(14px, 17px)
+        color: $black
+        display: none
+        font-weight: 600
+        @include plus1025()
+            display: inline-block
+            margin-right: 16px
