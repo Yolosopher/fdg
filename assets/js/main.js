@@ -17,6 +17,11 @@ const heroSwiper = new Swiper('.main__herocontent__swiper', {
     slidesPerView: 1,
     spaceBetween: 15,
     speed: 600,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+    loop: true,
     // grabCursor: true,
     navigation: {
         nextEl: '.sliderpag__right',
@@ -24,10 +29,9 @@ const heroSwiper = new Swiper('.main__herocontent__swiper', {
         disabledClass: 'disabled'
     },
     breakpoints: {
-        1025: {
-            // spaceBetween: 0
+        700: {
             speed: 1000
-        }
+        },
     }
 })
 
@@ -35,7 +39,13 @@ const heroSwiper = new Swiper('.main__herocontent__swiper', {
 const productsSwiper = new Swiper('.main__products__swiper', {
     slidesPerView: 'auto',
     spaceBetween: 15,
+    speed: 600,
     // grabCursor: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+    loop: true,
     pagination: {
         el: '.main__products__pagination',
         type: 'bullets',
@@ -45,11 +55,13 @@ const productsSwiper = new Swiper('.main__products__swiper', {
     autoHeight: true,
     breakpoints: {
         700: {
-            slidesPerView: 3
+            slidesPerView: 3,
+            speed: 1000
         },
         1025: {
             spaceBetween: 16,
             slidesPerView: 5,
+            speed: 1000
         }
     }
 })
